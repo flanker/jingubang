@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    jingubang (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  jingubang!
+
+BUNDLED WITH
+   1.14.6
