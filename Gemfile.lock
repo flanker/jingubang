@@ -2,10 +2,12 @@ PATH
   remote: .
   specs:
     jingubang (0.0.1)
+      weixin_message_encryptor
 
 GEM
   remote: https://rubygems.org/
   specs:
+    weixin_message_encryptor (0.1.0.1)
 
 PLATFORMS
   ruby
@@ -14,4 +16,4 @@ DEPENDENCIES
   jingubang!
 
 BUNDLED WITH
-   1.14.6
+   1.16.1
