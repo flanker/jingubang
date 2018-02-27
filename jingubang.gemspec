@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.require_path = ['lib']
 
   s.add_dependency 'weixin_message_encryptor'
+  s.add_dependency 'rest-client'
 end
