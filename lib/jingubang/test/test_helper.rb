@@ -56,6 +56,51 @@ module Jingubang
             }
           end
 
+          def build_weixin_qiye_permanent_auth_data mobile: '13812345678', email: 'anna@frozen.com'
+            {
+              access_token: 'ACCESS_TOKEN',
+              expires_in: 7200,
+              permanent_code: 'PERMANENT_CODE',
+              auth_corp_info: {
+                corpid: 'WXCORPID',
+                corp_name: 'Frozen Tech',
+                corp_type: 'unverified',
+                corp_round_logo_url: 'http://mmbiz.qpic.cn/mmbiz/round_logo/0',
+                corp_square_logo_url: 'http://p.qpic.cn/qqmail_pic/4144698419/square_logo/0',
+                corp_user_max: 200,
+                corp_agent_max: 0,
+                corp_wxqrcode: 'http://shp.qpic.cn/bizmp/wxqrcode/',
+                corp_full_name: '',
+                subject_type: 1,
+                verified_end_time: 0
+              },
+              auth_info: {
+                agent: [{
+                  agentid: 1000005,
+                  name: '金数据DEV',
+                  square_logo_url: 'http://p.qlogo.cn/bizmail/agent_square_logo/0',
+                  appid: 1,
+                  privilege: {
+                    level: 2,
+                    allow_party: [1],
+                    allow_user: [],
+                    allow_tag: [],
+                    extra_party: [],
+                    extra_user: [],
+                    extra_tag: []
+                  }
+                }]
+              },
+              auth_user_info: {
+                userid: 'anna',
+                mobile: mobile,
+                email: email,
+                name: 'Anna',
+                avatar: 'http://p.qlogo.cn/bizmail/anna_avatar/0'
+              }
+            }.with_indifferent_access
+          end
+
           private
 
           def build_weixin_qiye_error_result error_code
