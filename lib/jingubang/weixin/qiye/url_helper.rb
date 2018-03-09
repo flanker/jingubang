@@ -13,6 +13,10 @@ module Jingubang::Weixin::Qiye
         "https://open.work.weixin.qq.com/wwopen/sso/3rd_qrConnect?appid=#{agentid}&redirect_uri=#{redirect_uri}&state=#{state}&usertype=#{user_type}"
       end
 
+      def third_party_install_path(redirect_uri, pre_auth_code: nil, agentid: nil, state: '')
+        "https://open.work.weixin.qq.com/3rdapp/install?suite_id=#{agentid}&pre_auth_code=#{pre_auth_code}&redirect_uri=#{redirect_uri}&state=#{state}"
+      end
+
     end
   end
 end
