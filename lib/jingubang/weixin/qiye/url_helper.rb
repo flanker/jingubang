@@ -17,6 +17,10 @@ module Jingubang::Weixin::Qiye
         "https://open.work.weixin.qq.com/3rdapp/install?suite_id=#{agentid}&pre_auth_code=#{pre_auth_code}&redirect_uri=#{redirect_uri}&state=#{state}"
       end
 
+      def custom_registration_path(register_code)
+        "https://open.work.weixin.qq.com/3rdservice/wework/register?register_code=#{register_code}"
+      end
+
     end
   end
 end

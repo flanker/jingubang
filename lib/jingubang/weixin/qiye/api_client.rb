@@ -12,6 +12,12 @@ module Jingubang::Weixin::Qiye
         fire_request path, {auth_code: auth_code}
       end
 
+      def get_register_code(access_token, template_id)
+        path = "/cgi-bin/service/get_register_code?provider_access_token=#{access_token}"
+        response = fire_request path, {template_id: template_id}
+        response['register_code']
+      end
+
       private
 
       def fire_request path, params
