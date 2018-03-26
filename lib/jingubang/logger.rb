@@ -1,6 +1,6 @@
 module Jingubang
 
-  @@logger = Logger.new(STDOUT)
+  @@logger = ::Logger.new(STDOUT)
 
   def self.logger
     @@logger

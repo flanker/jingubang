@@ -11,19 +11,13 @@ module Jingubang::Weixin::Qiye
 
     ROOT_DEPARTMENT_ID = 1
 
-    include Jingubang::HttpClient
     include Account::SendMessage
 
-    base_url 'https://qyapi.weixin.qq.com'
+    BASE_URL = 'https://qyapi.weixin.qq.com'
 
     def self.included(host_class)
-      host_class.extend ClassMethods
-    end
-
-    module ClassMethods
-      def api_base_url
-        Account.api_base_url
-      end
+      host_class.include Jingubang::HttpClient
+      host_class.base_url BASE_URL
     end
 
     # API methods:
@@ -43,6 +37,11 @@ module Jingubang::Weixin::Qiye
 
     def fetch_all_user_list
       fetch_user_list ROOT_DEPARTMENT_ID, fetch_child: true
+    end
+
+    def fetch_user userid
+      path = "/cgi-bin/user/get?access_token=#{refreshed_access_token}&userid=#{userid}"
+      response = fire_request path, {}
     end
 
   end
