@@ -32,7 +32,7 @@ module Jingubang
         response = JSON.parse RestClient.post(
           url,
           params.to_json,
-          timeout: 5,
+          timeout: 60,
           :content_type => :json,
           :accept => :json
         )
