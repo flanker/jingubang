@@ -1,6 +1,19 @@
 module Jingubang::Weixin::Qiye::Account
   module SendMessage
 
+    def send_text_message userids: [], content: nil
+      path = "/cgi-bin/message/send?access_token=#{refreshed_access_token}"
+      body = {
+        touser: userids_param(userids),
+        msgtype: 'text',
+        agentid: agentid,
+        text: {
+          content: content
+        }
+      }
+      response = fire_request path, body
+    end
+
     def send_text_card_message userids: [], title: nil, description: nil, url: nil, button_text: '详情'
       path = "/cgi-bin/message/send?access_token=#{refreshed_access_token}"
       body = {
