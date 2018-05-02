@@ -4,6 +4,7 @@ module Jingubang::Weixin::Qiye
   module Account
 
     # Required fields:
+    #   field :corpid, type: String
     #   field :access_token, type: String
     #   field :expired_at, type: Time
     #   field :permanent_code, type: String

@@ -21,6 +21,12 @@ module Jingubang::Weixin::Qiye
         path = "/cgi-bin/service/get_permanent_code?suite_access_token=#{refreshed_access_token}"
         fire_request path, {auth_code: auth_code}
       end
+
+      def get_auth_info corpid, permanent_code
+        path = "/cgi-bin/service/get_auth_info?suite_access_token=#{refreshed_access_token}"
+        fire_request path, {auth_corpid: corpid, permanent_code: permanent_code}
+      end
+
     end
 
   end
