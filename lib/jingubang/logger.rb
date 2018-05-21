@@ -6,4 +6,8 @@ module Jingubang
     @@logger
   end
 
+  def self.logger= value
+    @@logger = value
+  end
+
 end
