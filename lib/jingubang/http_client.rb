@@ -33,8 +33,8 @@ module Jingubang
           url,
           params.to_json,
           timeout: 60,
-          :content_type => :json,
-          :accept => :json
+          content_type: :json,
+          accept: :json
         )
 
         log "Jingubang response: #{response}"
