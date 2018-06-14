@@ -1,3 +1,4 @@
+require 'actionpack-xml_parser'
 require 'jingubang/rails/routes'
 
 module Jingubang

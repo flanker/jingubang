@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.test_files   = `git ls-files -- test/*`.split("\n")
   s.require_path = ['lib']
 
+  s.add_dependency 'aescrypt'
   s.add_dependency 'weixin_message_encryptor'
   s.add_dependency 'rest-client'
+  s.add_dependency 'actionpack-xml_parser'
 end

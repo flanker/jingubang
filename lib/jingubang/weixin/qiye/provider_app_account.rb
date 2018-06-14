@@ -19,13 +19,12 @@ module Jingubang::Weixin::Qiye
     #     * suite_access_token
     #     * suite_access_token_expired_at
 
-    extend Jingubang::Weixin::Qiye::ProviderAppAccount::API
-
     BASE_URL = 'https://qyapi.weixin.qq.com'
 
     def self.included(host_class)
       host_class.include Jingubang::HttpClient
       host_class.base_url BASE_URL
+      host_class.extend Jingubang::Weixin::Qiye::ProviderAppAccount::API
       host_class.extend ClassMethods
     end
 
@@ -36,7 +35,7 @@ module Jingubang::Weixin::Qiye
       end
 
       def refreshed_access_token
-        return suite_accees_token unless access_token_expired?
+        return suite_access_token unless access_token_expired?
         refreshed_access_token!
       end
 

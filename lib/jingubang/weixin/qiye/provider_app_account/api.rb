@@ -4,13 +4,13 @@ module Jingubang::Weixin::Qiye::ProviderAppAccount
     def get_suite_access_token
       path = '/cgi-bin/service/get_suite_token'
       response = fire_request path, {suite_id: suite_id, suite_secret: suite_secret, suite_ticket: suite_ticket}
-      {suite_access_token: res[:suite_access_token], expires_in: res[:expires_in]}
+      {suite_access_token: response[:suite_access_token], expires_in: response[:expires_in]}
     end
 
     def get_pre_auth_code
       path = "/cgi-bin/service/get_pre_auth_code?suite_access_token=#{refreshed_access_token}"
-      fire_request path, {suite_id: suite_id}
-      res[:pre_auth_code]
+      response = fire_request path, {suite_id: suite_id}
+      response[:pre_auth_code]
     end
 
     def set_test_auth_mode code
