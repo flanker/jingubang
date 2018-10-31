@@ -1,4 +1,5 @@
 require 'jingubang/weixin/qiye/provider_app_account/api'
+require 'jingubang/weixin/qiye/provider_app_account/url'
 
 module Jingubang::Weixin::Qiye
   module ProviderAppAccount
@@ -25,6 +26,7 @@ module Jingubang::Weixin::Qiye
       host_class.include Jingubang::HttpClient
       host_class.base_url BASE_URL
       host_class.extend Jingubang::Weixin::Qiye::ProviderAppAccount::API
+      host_class.extend Jingubang::Weixin::Qiye::ProviderAppAccount::URL
       host_class.extend ClassMethods
     end
 

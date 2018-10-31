@@ -64,7 +64,7 @@ module Jingubang
               auth_corp_info: {
                 corpid: 'WXCORPID',
                 corp_name: 'Frozen Tech',
-                corp_type: 'unverified',
+                corp_type: 'verified',
                 corp_round_logo_url: 'http://mmbiz.qpic.cn/mmbiz/round_logo/0',
                 corp_square_logo_url: 'http://p.qpic.cn/qqmail_pic/4144698419/square_logo/0',
                 corp_user_max: 200,
