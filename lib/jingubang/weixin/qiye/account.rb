@@ -1,5 +1,6 @@
 require 'jingubang/weixin/qiye/account/api'
 require 'jingubang/weixin/qiye/account/send_message'
+require 'jingubang/weixin/qiye/account/url'
 
 module Jingubang::Weixin::Qiye
   module Account
@@ -15,6 +16,7 @@ module Jingubang::Weixin::Qiye
 
     include Account::API
     include Account::SendMessage
+    include Account::URL
 
     BASE_URL = 'https://qyapi.weixin.qq.com'
 
